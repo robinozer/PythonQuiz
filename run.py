@@ -1,12 +1,13 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-print("Welcome to this Python Quiz")
-
 introduction = input("What is your name?\n")
 
 # Validate answer is filled in, and:
 
-print(f'Hello {introduction}, welcome to this Python Quiz. Each question has four answer options. You get one point for each correct answer.\nPress enter to start the quiz. Good luck {introduction}!')
+print(f'Hello {introduction}, welcome to this Python Quiz. Each question has four answer options. You get one point for each correct answer.\nGood luck {introduction}!')
+input("Press Enter to start the quiz.")
+
+#initialize quiz with first question from dictionary.
 
 QUESTIONS = {
     "Aureolin is a shade of what color?": [

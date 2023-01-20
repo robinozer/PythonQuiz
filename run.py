@@ -1,5 +1,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+print("Welcome to this Python Quiz")
+
 introduction = input("What is your name?\n")
 
 # Validate answer is filled in, and:
@@ -24,16 +26,20 @@ QUESTIONS = {
     ],
 }
 
-SCORE = 0
+score = 0
 
 for question, options in QUESTIONS.items():
     correct_option = options[0]
-    for option in options:
-        print(f" - {option}")
+    sorted_options = sorted(options)
 
-    user_answer = input(f"{question} ")
+    for label, option in enumerate(sorted_options):
+        print(f" {label} {option}")
+
+    user_answer_label = int(input(f"{question}"))
+    user_answer = sorted_options[user_answer_label]
     if user_answer == correct_option:
         print(f"{user_answer} is correct. You're a genius!")
-        SCORE += 1
+        score += 1
     else:
-        print(f"{user_answer} is incorrect.\nThe correct answer is {correct_option}.")
+        print(f"{user_answer} is incorrect. The correct answer is {correct_option}.")
+print(f"\nYour score is {score} out of 5. Well done {introduction}.")
